@@ -54,25 +54,33 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_Winsper_Tech.sendMessage(Pair_Code_By_Winsper_Tech.user.id, { text: 'WILLIS;;;' + b64data });
+               let session = await Pair_Code_By_Winsper_Tech.sendMessage(Pair_Code_By_Winsper_Tech.user.id, { text: 'WILLIS_MD_2024_' + b64data });
 
                let WILLIS_MD_TEXT = `𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗜𝗗
 - You have successfully connected to ᴡɪʟʟɪꜱ-ᴍᴅ
 
 - ABOVE is your SESSION ID. Copy it as it will be required during deploy.
-══════════════════⊷
-*ᴡɪʟʟɪꜱ▷* +254786273945
-══════════════════⊷
+⊶══════════════════⊷
+             *ɴᴀᴍᴇ ⇌* ᴡɪʟʟɪꜱ
+      *ᴄᴏɴᴛᴀᴄᴛ ⇌* +254786273945
+⊶══════════════════⊷
 ╭────《  ᴡɪʟʟɪꜱ-ᴍᴅ  》────⊷
-│ ╭──────✧❁✧──────◆
-│ │ *YouTube▷*
+│ ╭──────✧❁✧──────⊰
+│ │ *YouTube⇘*
 │ │https://www.youtube.com/c/WillisWrld
-│ │ *InstaGram▷* 
+│ │ *InstaGram⇘* 
 │ │https://www.instagram.com/Officialwilis
-│ │ *FaceBook▷*
+│ │ *FaceBook⇘*
 │ │https://www.facebook.com/Officialwilis
-│ ╰──────✧❁✧──────◆
-╰══════════════════⊷`
+│ │ *GitHub⇘*
+│ │https://github.com/WillisKE
+│ ╰──────✧❁✧──────⊰
+╰══════════════════⊷
+*Group⇘*
+https://chat.whatsapp.com/KlFKWN3QWq04DKeAdjk8gw
+*Channel⇘*
+https://whatsapp.com/channel/0029VaZ8Q0Y1XquZ673Uvs0m
+⊶══════════════════⊷`
  await Pair_Code_By_Winsper_Tech.sendMessage(Pair_Code_By_Winsper_Tech.user.id,{text: WILLIS_MD_TEXT},{quoted:session})
  
 
