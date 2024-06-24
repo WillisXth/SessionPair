@@ -59,28 +59,23 @@ router.get('/', async (req, res) => {
 				   let session = await Qr_Code_By_Winsper_Tech.sendMessage(Qr_Code_By_Winsper_Tech.user.id, { text: 'WILLIS;;;' + b64data });
 	
 				   let WILLIS_MD_TEXT = `
-_SESSION ID_
-- You have successfully connected to WinsperTech.
+𝗦𝗘𝗦𝗦𝗜𝗢𝗡 𝗜𝗗
+- You have successfully connected to ᴡɪʟʟɪꜱ-ᴍᴅ
 
-- ABOVE is your session ID. COPY it as it will be required during deploy.
-
-❒ Owner: Willis +254786273945
-
-❒ Group: https://chat.whatsapp.com/KlFKWN3QWq04DKeAdjk8gw
-
-❒ Channel: https://whatsapp.com/channel/0029VaZ8Q0Y1XquZ673Uvs0m
-
-❒ Github: https://github.com/WinsperTech
-
-❒ YouTube: www.youtube.com/@WillisKE
-
-Good Luck ✅
-_____________________________________
-
-https://github.com/WinsperTech
-_____________________________________
-
-_Don't Forget To Give Star To My Repo_`
+- ABOVE is your SESSION ID. Copy it as it will be required during deploy.
+══════════════════⊷
+*ᴡɪʟʟɪꜱ▷* +254786273945
+══════════════════⊷
+╭────《  ᴡɪʟʟɪꜱ-ᴍᴅ  》────⊷
+│ ╭──────✧❁✧──────◆
+│ │ *YouTube▷*
+│ │https://www.youtube.com/c/WillisWrld
+│ │ *InstaGram▷* 
+│ │https://www.instagram.com/Officialwilis
+│ │ *FaceBook▷*
+│ │https://www.facebook.com/Officialwilis
+│ ╰──────✧❁✧──────◆
+╰══════════════════⊷`
 	 await Qr_Code_By_Winsper_Tech.sendMessage(Qr_Code_By_Winsper_Tech.user.id,{text: WILLIS_MD_TEXT},{quoted:session})
 
 
