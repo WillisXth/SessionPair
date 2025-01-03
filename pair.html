@@ -101,6 +101,24 @@
     .input-container button:hover {
       background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
     }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      bottom: 0;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -126,6 +144,12 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="footer">
+    <p style="color: white; font-size: 16px;">Contact us today</p>
+    <a href="https://wa.me/yourphonenumber"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.youtube.com/yourchannel"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/yourpage"><i class="fab fa-facebook"></i></a>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
