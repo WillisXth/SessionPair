@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pair Code</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
   <style>
     body {
       display: flex;
@@ -18,8 +14,12 @@
       height: 100vh;
       margin: 0;
       background: url(https://telegra.ph/file/8ef7cef2f60dafe9ab8f9.jpg) no-repeat;
-     background-size: cover;
-     background-position: center;
+      background-size: cover;
+      background-position: center;
+    }
+
+    * {
+      touch-action: manipulation;
     }
 
     .container {
@@ -30,15 +30,15 @@
 
     .box {
       position: relative;
-      width: 300px;
-      height: 320px;
+      width: 90%;
+      max-width: 400px;
       text-align: center;
       padding: 20px;
       background: transparent;
-      border: 1px solid rgba(68,150,255,5);
+      border: 1px solid rgba(68, 150, 255, 5);
       border-radius: 20px;
       backdrop-filter: blur(20px);
-      box-shadow: 0 0 30px rgba (0,0,0,5);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     }
 
     #text {
@@ -101,135 +101,9 @@
     .input-container button:hover {
       background: linear-gradient(135deg, #c01736 0%, #8b17b6 100%);
     }
-
-    @media (max-width: 500px) {
-      .input-container {
-        flex-direction: column;
-      }
-
-      .input-container input {
-        border-radius: 0.8rem;
-      }
-
-      .input-container button {
-        padding: 0.4rem;
-        border-radius: 0.8rem;
-      }
-    }
-
-    .centered-text {
-      text-align: center;
-    }
-
-    @media (max-width: 500px) {
-      .box {
-        width: 90%; 
-      }
-    }
-
-    @media (max-width: 500px) {
-      .input-container input {
-        border-radius: 0.8rem;
-        width: 80%; 
-      }
-
-      .input-container button {
-        padding: 1rem;
-        border-radius: 0.9rem;
-        width: 100%; 
-      }
-      .news-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    font-family: "Roboto", sans-serif;
-    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
-}
-
-.news-container .title {
-    position: absolute;
-    background: transparent;
-    border: 1px solid rgba(68,150,255,5);    
-    backdrop-filter: blur(20px);px);
-    height: 100%;
-    display: flex;
-    align-items: center;    
-     0p240 240 24px;
-    color: white;
-    font-weight: bold;
-    z-index: 200;
-}
-
-.news-container ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    animation:scroll 25s infinite linear;
-}
-
-.news-container ul li {
-    white-space: nowrap;
-    padding: 10px 24px;
-    color: #21ffd2;
-    position: relative;
-}
-
-.news-container ul li::after {
-    content:"";
-    width: 1px;
-    height: 100%;
-    background: #ee82ee;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.news-container ul li:last-child::after {
-    display: none;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(-1083px);
-
-    }
-}
-    }
   </style>
 </head>
 <body>
-  <div class="news-container">
-        <div class="title">
-            𓆩≛WIL𓆩𓆪LIS≛𓆪            
-        </div>
-
-        <ul>
-            <li>
-                ENTER YOUR PHONE NUMBER STARTING WITH YOUR COUNTY CODE
-            </li>
-            
-            <li>
-                SUBMIT AND WAIT
-            </li>
-            
-            <li>
-                COPY THE CODE AND USE TO LINK YOUR DEVICE
-            </li>
-
-            <li>
-                THANK YOU FOR VISITING OUR SITE
-            </li>
-            
-            <li>
-                FOR ENQUIRIES TEXT ME ON WHATSAPP +254786273945
-            </li>
-        </ul>
-    </div>
   <div class="container">
     <div class="main">
       <div class="box" id="box">
@@ -240,7 +114,7 @@
             <br>
             <h6>Enter your number starting with your country code.</h6>
             <div class="input-container">
-              <input placeholder="2547862XX945" type="number" id="number" placeholder="Enter your phone number with a country code" name="">
+              <input type="number" id="number" placeholder="Enter your phone number with a country code">
               <button id="submit">Submit</button>
             </div>
             
@@ -277,51 +151,31 @@
     b.addEventListener("click", async (e) => {
       e.preventDefault();
       if (!c.value) {
-        a.innerHTML = '<a style="color:white;font-weight:bold">Enter your WhatsApp number starting with your country code</a><br><br>';
+        a.innerHTML = '<a style="color:white;font-weight:bold">Please enter your phone number starting with your country code</a><br><br>';
       } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
         a.innerHTML = '<a style="color:red;font-weight:bold">Invalid number</a><br><br>';
       } else {
-        const Winsper_Tech = c.value.replace(/[^0-9]/g, "");
-        let bb = "";
-        let bbc = "";
-        const cc = Winsper_Tech.split('');
-        cc.map(a => {
-          bbc += a;
-          if (bbc.length == 3) {
-            bb += " " + a;
-          } else if (bbc.length == 8) {
-            bb += " " + a;
+        const phoneNumber = c.value.replace(/[^0-9]/g, "");
+        let formattedNumber = "";
+        let tempNumber = "";
+        const numberArray = phoneNumber.split('');
+        numberArray.map(num => {
+          tempNumber += num;
+          if (tempNumber.length == 3 || tempNumber.length == 8) {
+            formattedNumber += " " + num;
           } else {
-            bb += a;
+            formattedNumber += num;
           }
         });
         c.type = "text";
-        c.value = "+" + bb;
+        c.value = "+" + formattedNumber;
         c.style = "color:black;font-size:20px";
-        a.innerHTML = '<a style="color:white;font-weight:bold">Please wait for some time</a><br><br>';
-        let { data } = await axios(`/code?number=${Winsper_Tech}`);
+        a.innerHTML = '<a style="color:white;font-weight:bold">Please wait for a moment</a><br><br>';
+        let { data } = await axios(`/code?number=${phoneNumber}`);
         let code = data.code || "Service Unavailable";
         a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
       }
     });
   </script>
-<!-- GetButton.io widget -->
-<script type="text/javascript">
-    (function () {
-        var options = {
-            whatsapp: "+254786273945", // WhatsApp number
-            call_to_action: "Message us", // Call to action
-            button_color: "#FF318E", // Color of butto 
-            position: "left", // Position may be 'left' or 'right'
-            order: "sms,whatsapp", // Order of buttons
-            pre_filled_message: "Hello Willis👋...", // WhatsApp pre-filled message
-        };
-        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-</script>
-<!-- /GetButton.io widget -->  
 </body>
-  </html>
+</html>
